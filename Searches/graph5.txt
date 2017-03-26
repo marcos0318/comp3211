@@ -1,0 +1,16 @@
+6
+Start A B C D Goal
+start:Start
+goal:Goal
+Start:A,2;B,1
+A:B,1;C,3;D,1
+B:D,5;Goal,10
+C:Goal,10
+D:Goal,4
+Goal:
+Start:0
+A:3
+B:3
+C:1
+D:2
+Goal:0
