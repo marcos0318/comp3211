@@ -1,3 +1,7 @@
+Python 2.7
+Anaconda2
+Conda 4.3.4
+
 This is the first project of COMP3211. The implementattion of several searches on graphes.
 The inputs are graphs, represented as adjacency lists, including the weighted ones and not weighted.
 
