@@ -255,50 +255,6 @@ class OffensivePlanningAgent(PlanningCaptureAgent):
   This agent consider getting food and also be aware of other ememy
   that can eat him
   """
-  """
-  def getFeatures(self, gameState, action):
-    features = util.Counter()
-
-    #sucessor is another gameState object of the next moment with a certain
-    #action
-    successor = self.getSuccessor(gameState, action)
-    foodList = self.getFood(successor).asList()
-    features['successorScore'] = -len(foodList)#self.getScore(successor)
-
-    # Compute distance to the nearest food
-
-    if len(foodList) > 0: # This should always be True,  but better safe than sorry
-      myPos = successor.getAgentPosition(self.index)
-      minDistance = min([self.getMazeDistance(myPos, food) for food in foodList])
-      features['distanceToFood'] = minDistance
-
-    opponentList = self.getOpponents(successor)
-    dangerGhostList = []
-    #print opponentList
-    for opponent in opponentList:
-      #check whether the opponent is a pacman
-      #print successor.getAgentState(opponent).isPacman
-      if successor.getAgentState(opponent).isPacman:
-        continue
-      #check whether the ghost is scared
-      #print successor.getAgentState(opponent).scaredTimer > 0
-      if successor.getAgentState(opponent).scaredTimer > 0:
-        continue
-      #check the distance of the agents
-      opponentPos = successor.getAgentPosition(opponent)
-      myPos = successor.getAgentState(self.index).getPosition()
-      if myPos != None and opponentPos != None:
-        if self.getMazeDistance(myPos, opponentPos) > 0 :
-          continue
-      else:
-        continue
-      dangerGhostList.append(opponent)
-    if len(dangerGhostList) > 0:
-      features['isNearDangerGhost'] = 1
-    else:
-      features['isNearDangerGhost'] = 0
-    return features
-    """
 
 
   def getFeatures(self, gameState, action):
