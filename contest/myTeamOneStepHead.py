@@ -186,7 +186,7 @@ class OffensiveReflexAgent(ReflexCaptureAgent):
       opponentPos = successor.getAgentState(opponent).getPosition()
       myPos = successor.getAgentState(self.index).getPosition()
       if myPos != None and opponentPos != None:
-        if self.getMazeDistance(myPos, opponentPos) > 2 :
+        if self.getMazeDistance(myPos, opponentPos) > 1 :
           continue
       else:
         continue
